@@ -1,0 +1,56 @@
+@Metadata.layer: #CORE
+
+annotate entity ZC_TransportationOrder with
+{
+  @UI.lineItem: [
+    { position: 10, importance: #HIGH }
+  ]
+  @UI.selectionField: [{ position: 10 }]
+  TransportationOrderUUID;
+  @UI.lineItem: [
+    { position: 20, importance: #HIGH }
+  ]
+  @UI.selectionField: [{ position: 20 }]
+  TransportationOrder;
+  @UI.lineItem: [
+    { position: 30, importance: #HIGH }
+  ]
+  TransportationOrderCategory;
+  @UI.lineItem: [
+    { position: 40, importance: #HIGH }
+  ]
+  DangerousGoodsAreContained;
+  @UI.lineItem: [
+    { position: 50, importance: #HIGH }
+  ]
+  TranspOrdResponsiblePerson;
+  @UI.lineItem: [
+    { position: 60, importance: #HIGH }
+  ]
+  TranspOrdPartnerReference;
+  @UI.lineItem: [
+    { position: 70, importance: #HIGH }
+  ]
+  MasterBillOfLading;
+  @UI.lineItem: [
+    { position: 80, importance: #HIGH }
+  ]
+  TranspOrdPlanningBlock;
+  @UI.lineItem: [
+    { position: 90, importance: #HIGH }
+  ]
+  TranspOrdExecutionIsBlocked;
+  @UI.lineItem: [
+    { position: 100, importance: #HIGH }
+  ]
+  InvoicingIsBlocked;
+  @UI.lineItem: [
+    { position: 110, importance: #HIGH }
+  ]
+  CarrierUUID;
+  @UI.lineItem: [
+    { position: 120, importance: #HIGH }
+  ]
+  Carrier;
+  /* Associations */
+}

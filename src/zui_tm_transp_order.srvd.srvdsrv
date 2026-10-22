@@ -1,0 +1,6 @@
+@EndUserText.label: 'TM Transportation Order UI Service'
+define service ZUI_TM_TRANSP_ORDER {
+  expose ZC_TransportationOrder as TransportationOrder;
+  expose ZC_TransportationOrderItem as TransportationOrderItem;
+  expose ZCE_CMRPDF as CMRPDF;
+}

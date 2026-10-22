@@ -1,0 +1,11 @@
+unmanaged implementation in class zbp_r_transportationorder unique;
+strict ( 2 );
+
+define behavior for ZR_TransportationOrder alias TransportationOrder
+//persistent table <???>
+lock master
+authorization master ( instance )
+//etag master <field_name>
+{
+  action PreviewPDF result [1] ZAE_CMRPDF;
+}
