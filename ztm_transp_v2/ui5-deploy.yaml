@@ -1,0 +1,27 @@
+# yaml-language-server: $schema=https://sap.github.io/ui5-tooling/schema/ui5.yaml.json
+
+specVersion: "4.0"
+metadata:
+  name: ztaking.ztmtranspv2
+type: application
+builder:
+  resources:
+    excludes:
+      - /test/**
+      - /localService/**
+      - /test/**
+      - /localService/**
+  customTasks:
+    - name: deploy-to-abap
+      afterTask: generateCachebusterInfo
+      configuration:
+        target:
+          url: http://ec2-54-247-161-172.eu-west-1.compute.amazonaws.com:50000
+          client: '100'
+        app:
+          name: ZTM_TRANSP_V2
+          description: Transportation Management OData V2
+          package: ZTM_DEV
+          transport: S4HK903005
+        exclude:
+          - /test/
