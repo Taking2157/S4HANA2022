@@ -1,0 +1,407 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="4.0" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMUNICATION',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.Communication.v1" Alias="Communication"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_PERSONALDATA',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.PersonalData.v1" Alias="PersonalData"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_ANALYTICS',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.Analytics.v1" Alias="Analytics"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMON',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.Common.v1" Alias="SAP__common"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_MEASURES',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="Org.OData.Measures.V1" Alias="SAP__measures"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_CORE',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="Org.OData.Core.V1" Alias="SAP__core"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_CAPABILITIES',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="Org.OData.Capabilities.V1" Alias="SAP__capabilities"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_AGGREGATION',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="Org.OData.Aggregation.V1" Alias="SAP__aggregation"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_VALIDATION',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="Org.OData.Validation.V1" Alias="SAP__validation"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_CODELIST',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.CodeList.v1" Alias="SAP__CodeList"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_UI',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.UI.v1" Alias="SAP__UI"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_HTML5',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.HTML5.v1" Alias="SAP__HTML5"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_PDF',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.PDF.v1" Alias="SAP__PDF"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_SESSION',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.Session.v1" Alias="SAP__session"/>
+    </edmx:Reference>
+    <edmx:DataServices>
+        <Schema Namespace="com.sap.gateway.srvd.zui_tm_transp_order.v0001" Alias="SAP__self">
+            <Annotation Term="SAP__core.SchemaVersion" String="1.0.0"/>
+            <EntityType Name="TransportationOrderItemType">
+                <Key>
+                    <PropertyRef Name="TransportationOrderItemUUID"/>
+                </Key>
+                <Property Name="TransportationOrderItemUUID" Type="Edm.Guid" Nullable="false"/>
+                <Property Name="TransportationOrderUUID" Type="Edm.Guid"/>
+                <Property Name="TranspOrdItem" Type="Edm.String" Nullable="false" MaxLength="10"/>
+                <Property Name="IsMultiItem" Type="Edm.String" Nullable="false" MaxLength="1"/>
+                <Property Name="TranspOrdItemParentItemUUID" Type="Edm.Guid"/>
+                <Property Name="SourceStopUUID" Type="Edm.Guid"/>
+                <Property Name="DestinationStopUUID" Type="Edm.Guid"/>
+                <Property Name="TranspOrdItemDesc" Type="Edm.String" Nullable="false" MaxLength="40"/>
+                <Property Name="TranspOrdItemCategory" Type="Edm.String" Nullable="false" MaxLength="3"/>
+                <Property Name="IsMainCargoItem" Type="Edm.String" Nullable="false" MaxLength="1"/>
+                <Property Name="PredecessorTransportationOrder" Type="Edm.Guid"/>
+                <Property Name="Shipper" Type="Edm.String" Nullable="false" MaxLength="10"/>
+                <Property Name="Consignee" Type="Edm.String" Nullable="false" MaxLength="10"/>
+                <Property Name="TransportationMode" Type="Edm.String" Nullable="false" MaxLength="2"/>
+                <Property Name="TransportationModeCategory" Type="Edm.String" Nullable="false" MaxLength="1"/>
+                <Property Name="MeansOfTransport" Type="Edm.String" Nullable="false" MaxLength="10"/>
+            </EntityType>
+            <EntityType Name="TransportationOrderType">
+                <Key>
+                    <PropertyRef Name="TransportationOrderUUID"/>
+                </Key>
+                <Property Name="TransportationOrderUUID" Type="Edm.Guid" Nullable="false"/>
+                <Property Name="TransportationOrder" Type="Edm.String" Nullable="false" MaxLength="20"/>
+                <Property Name="TransportationOrderCategory" Type="Edm.String" Nullable="false" MaxLength="2"/>
+                <Property Name="DangerousGoodsAreContained" Type="Edm.Boolean" Nullable="false"/>
+                <Property Name="TranspOrdResponsiblePerson" Type="Edm.String" Nullable="false" MaxLength="12"/>
+                <Property Name="TranspOrdPartnerReference" Type="Edm.String" Nullable="false" MaxLength="35"/>
+                <Property Name="MasterBillOfLading" Type="Edm.String" Nullable="false" MaxLength="35"/>
+                <Property Name="TranspOrdPlanningBlock" Type="Edm.String" Nullable="false" MaxLength="1"/>
+                <Property Name="TranspOrdExecutionIsBlocked" Type="Edm.String" Nullable="false" MaxLength="1"/>
+                <Property Name="InvoicingIsBlocked" Type="Edm.String" Nullable="false" MaxLength="1"/>
+                <Property Name="CarrierUUID" Type="Edm.Guid"/>
+                <Property Name="Carrier" Type="Edm.String" Nullable="false" MaxLength="10"/>
+            </EntityType>
+            <EntityContainer Name="Container">
+                <EntitySet Name="TransportationOrder" EntityType="com.sap.gateway.srvd.zui_tm_transp_order.v0001.TransportationOrderType"/>
+                <EntitySet Name="TransportationOrderItem" EntityType="com.sap.gateway.srvd.zui_tm_transp_order.v0001.TransportationOrderItemType"/>
+            </EntityContainer>
+            <Annotations Target="SAP__self.TransportationOrderItemType/TranspOrdItem">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Item"/>
+            </Annotations>
+            <Annotations Target="SAP__self.TransportationOrderItemType/IsMultiItem">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Multi-Item"/>
+            </Annotations>
+            <Annotations Target="SAP__self.TransportationOrderItemType/TranspOrdItemCategory">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Item Category"/>
+            </Annotations>
+            <Annotations Target="SAP__self.TransportationOrderItemType/IsMainCargoItem">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Main Cargo Item"/>
+            </Annotations>
+            <Annotations Target="SAP__self.TransportationOrderItemType/Shipper">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Shipper"/>
+            </Annotations>
+            <Annotations Target="SAP__self.TransportationOrderItemType/Consignee">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Ship-to Party"/>
+            </Annotations>
+            <Annotations Target="SAP__self.TransportationOrderItemType/TransportationMode">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Transportation Mode"/>
+            </Annotations>
+            <Annotations Target="SAP__self.TransportationOrderItemType/TransportationModeCategory">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="TrM Category"/>
+                <Annotation Term="SAP__common.Heading" String="TrM Cat."/>
+                <Annotation Term="SAP__common.QuickInfo" String="Transportation Mode Category"/>
+            </Annotations>
+            <Annotations Target="SAP__self.TransportationOrderItemType/MeansOfTransport">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Means of Transport"/>
+            </Annotations>
+            <Annotations Target="SAP__self.TransportationOrderItemType">
+                <Annotation Term="SAP__common.Label" String="Custom Consump Transportation Order Item"/>
+            </Annotations>
+            <Annotations Target="SAP__self.Container/TransportationOrderItem">
+                <Annotation Term="SAP__capabilities.SearchRestrictions">
+                    <Record>
+                        <PropertyValue Property="Searchable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.InsertRestrictions">
+                    <Record>
+                        <PropertyValue Property="Insertable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.DeleteRestrictions">
+                    <Record>
+                        <PropertyValue Property="Deletable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.UpdateRestrictions">
+                    <Record>
+                        <PropertyValue Property="Updatable" Bool="false"/>
+                        <PropertyValue Property="QueryOptions">
+                            <Record>
+                                <PropertyValue Property="SelectSupported" Bool="true"/>
+                            </Record>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__core.OptimisticConcurrency">
+                    <Collection/>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.FilterRestrictions">
+                    <Record>
+                        <PropertyValue Property="FilterExpressionRestrictions">
+                            <Collection>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="IsMultiItem"/>
+                                    <PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="TranspOrdItemCategory"/>
+                                    <PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="IsMainCargoItem"/>
+                                    <PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="TransportationMode"/>
+                                    <PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="TransportationModeCategory"/>
+                                    <PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="MeansOfTransport"/>
+                                    <PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="SAP__self.TransportationOrderType/TransportationOrder">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Document"/>
+            </Annotations>
+            <Annotations Target="SAP__self.TransportationOrderType/TransportationOrderCategory">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Document Category"/>
+                <Annotation Term="SAP__common.Heading" String="Business Document Category"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Business Document Category"/>
+            </Annotations>
+            <Annotations Target="SAP__self.TransportationOrderType/DangerousGoodsAreContained">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Dangerous Goods"/>
+            </Annotations>
+            <Annotations Target="SAP__self.TransportationOrderType/TranspOrdResponsiblePerson">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Person Responsible"/>
+            </Annotations>
+            <Annotations Target="SAP__self.TransportationOrderType/TranspOrdPartnerReference">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Partner Ref. Number"/>
+                <Annotation Term="SAP__common.Heading" String="Partner Reference Number"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Partner Reference Number"/>
+            </Annotations>
+            <Annotations Target="SAP__self.TransportationOrderType/MasterBillOfLading">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Carrier's MBL No."/>
+                <Annotation Term="SAP__common.Heading" String="Carrier's Master Bill of Lading Number"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Carrier's Master Bill of Lading Number"/>
+            </Annotations>
+            <Annotations Target="SAP__self.TransportationOrderType/TranspOrdPlanningBlock">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Planning Block"/>
+            </Annotations>
+            <Annotations Target="SAP__self.TransportationOrderType/TranspOrdExecutionIsBlocked">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Execution Block"/>
+            </Annotations>
+            <Annotations Target="SAP__self.TransportationOrderType/InvoicingIsBlocked">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="FSD Block"/>
+                <Annotation Term="SAP__common.Heading" String="Freight Settlement Document Block"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Freight Settlement Document Block"/>
+            </Annotations>
+            <Annotations Target="SAP__self.TransportationOrderType/Carrier">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Carrier"/>
+            </Annotations>
+            <Annotations Target="SAP__self.TransportationOrderType">
+                <Annotation Term="SAP__common.Label" String="Custom Consumption Transportation Order"/>
+            </Annotations>
+            <Annotations Target="SAP__self.Container/TransportationOrder">
+                <Annotation Term="SAP__capabilities.SearchRestrictions">
+                    <Record>
+                        <PropertyValue Property="Searchable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.InsertRestrictions">
+                    <Record>
+                        <PropertyValue Property="Insertable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.DeleteRestrictions">
+                    <Record>
+                        <PropertyValue Property="Deletable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.UpdateRestrictions">
+                    <Record>
+                        <PropertyValue Property="Updatable" Bool="false"/>
+                        <PropertyValue Property="QueryOptions">
+                            <Record>
+                                <PropertyValue Property="SelectSupported" Bool="true"/>
+                            </Record>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__core.OptimisticConcurrency">
+                    <Collection/>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.FilterRestrictions">
+                    <Record>
+                        <PropertyValue Property="FilterExpressionRestrictions">
+                            <Collection>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="TransportationOrderCategory"/>
+                                    <PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="DangerousGoodsAreContained"/>
+                                    <PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="TranspOrdResponsiblePerson"/>
+                                    <PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="TranspOrdPartnerReference"/>
+                                    <PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="MasterBillOfLading"/>
+                                    <PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="TranspOrdPlanningBlock"/>
+                                    <PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="TranspOrdExecutionIsBlocked"/>
+                                    <PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="InvoicingIsBlocked"/>
+                                    <PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="SAP__self.Container">
+                <Annotation Term="SAP__aggregation.ApplySupported">
+                    <Record>
+                        <PropertyValue Property="Transformations">
+                            <Collection>
+                                <String>aggregate</String>
+                                <String>groupby</String>
+                                <String>filter</String>
+                            </Collection>
+                        </PropertyValue>
+                        <PropertyValue Property="Rollup" EnumMember="SAP__aggregation.RollupType/None"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__common.ApplyMultiUnitBehaviorForSortingAndFiltering" Bool="true"/>
+                <Annotation Term="SAP__capabilities.FilterFunctions">
+                    <Collection>
+                        <String>eq</String>
+                        <String>ne</String>
+                        <String>gt</String>
+                        <String>ge</String>
+                        <String>lt</String>
+                        <String>le</String>
+                        <String>and</String>
+                        <String>or</String>
+                        <String>contains</String>
+                        <String>startswith</String>
+                        <String>endswith</String>
+                        <String>any</String>
+                        <String>all</String>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.SupportedFormats">
+                    <Collection>
+                        <String>application/json</String>
+                        <String>application/pdf</String>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="SAP__PDF.Features">
+                    <Record>
+                        <PropertyValue Property="DocumentDescriptionReference" String="../../../../default/iwbep/common/0001/$metadata"/>
+                        <PropertyValue Property="DocumentDescriptionCollection" String="MyDocumentDescriptions"/>
+                        <PropertyValue Property="ArchiveFormat" Bool="true"/>
+                        <PropertyValue Property="Border" Bool="true"/>
+                        <PropertyValue Property="CoverPage" Bool="true"/>
+                        <PropertyValue Property="FitToPage" Bool="true"/>
+                        <PropertyValue Property="FontName" Bool="true"/>
+                        <PropertyValue Property="FontSize" Bool="true"/>
+                        <PropertyValue Property="Margin" Bool="true"/>
+                        <PropertyValue Property="Signature" Bool="true"/>
+                        <PropertyValue Property="ResultSizeDefault" Int="20000"/>
+                        <PropertyValue Property="ResultSizeMaximum" Int="20000"/>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="SAP__self.TransportationOrderItemType/TransportationOrderItemUUID">
+                <Annotation Term="SAP__common.Label" String="UUID of TO Item"/>
+                <Annotation Term="SAP__common.Heading" String="UUID of Transportation Order Item with Conversion Exit"/>
+                <Annotation Term="SAP__common.QuickInfo" String="UUID of Transportation Order Item with Conversion Exit"/>
+            </Annotations>
+            <Annotations Target="SAP__self.TransportationOrderItemType/TransportationOrderUUID">
+                <Annotation Term="SAP__common.Label" String="Transportation Order UUID"/>
+            </Annotations>
+            <Annotations Target="SAP__self.TransportationOrderItemType/TranspOrdItemParentItemUUID">
+                <Annotation Term="SAP__common.Label" String="TO Item Key"/>
+                <Annotation Term="SAP__common.Heading" String="Key of Transportation Order Item"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Key of Transportation Order Item"/>
+            </Annotations>
+            <Annotations Target="SAP__self.TransportationOrderItemType/SourceStopUUID">
+                <Annotation Term="SAP__common.Label" String="TO Stop Key"/>
+                <Annotation Term="SAP__common.Heading" String="Key of a Stop of a Transportation Order"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Key of a Stop of a Transportation Order"/>
+            </Annotations>
+            <Annotations Target="SAP__self.TransportationOrderItemType/DestinationStopUUID">
+                <Annotation Term="SAP__common.Label" String="TO Stop Key"/>
+                <Annotation Term="SAP__common.Heading" String="Key of a Stop of a Transportation Order"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Key of a Stop of a Transportation Order"/>
+            </Annotations>
+            <Annotations Target="SAP__self.TransportationOrderItemType/TranspOrdItemDesc">
+                <Annotation Term="SAP__common.Label" String="Item Description"/>
+            </Annotations>
+            <Annotations Target="SAP__self.TransportationOrderItemType/PredecessorTransportationOrder">
+                <Annotation Term="SAP__common.Label" String="NodeID"/>
+            </Annotations>
+            <Annotations Target="SAP__self.TransportationOrderType/TransportationOrderUUID">
+                <Annotation Term="SAP__common.Label" String="Transportation Order UUID"/>
+            </Annotations>
+            <Annotations Target="SAP__self.TransportationOrderType/CarrierUUID">
+                <Annotation Term="SAP__common.Label" String="BP GUID"/>
+                <Annotation Term="SAP__common.Heading" String="Business Partner GUID"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Business Partner GUID"/>
+            </Annotations>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>
